@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseError.js","sourceRoot":"","sources":["../../errors/BaseError.ts"],"names":[],"mappings":";;AAAA,MAAa,SAAS;IAMlB,YAAY,WAAmB,EAAE,IAAY,EAAG,IAAY;QACxD,IAAI,CAAC,OAAO,GAAG,WAAW,CAAC;QAC3B,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACrB,CAAC;CACJ;AAXD,8BAWC"}

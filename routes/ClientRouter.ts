@@ -1,13 +1,12 @@
 import * as express from "express";
-import {ClientManager} from "../managers/ClientManager";
 
 export class ClientRouter {
 
     public router: express.Router;
-    private clientManager: ClientManager;
+    // private clientManager: ClientManager;
 
     constructor() {
-        this.clientManager = new ClientManager();
+        // this.clientManager = new ClientManager();
         this.router = express.Router();
         this.buildRoutes();
     }
@@ -15,6 +14,7 @@ export class ClientRouter {
     public async get(req: express.Request, res: express.Response, next: express.NextFunction) {
         try {
             // res.json(clients);
+            res.send('hello');
         } catch(error) {
             next(error);
         }
