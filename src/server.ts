@@ -4,8 +4,11 @@ import * as bodyParser from "body-parser";
 import * as passport from "passport";
 import * as config from "./config/config";
 import * as http from "http";
+import * as cors from 'cors';
+import { userRouter } from './routes/UserRouter';
+import { tokenGuard } from './middlewares/token.guard';
 // import {Auth} from "./auth/auth";
-import {Router} from "../routes/index";
+import {Router} from "./routes/index";
 import {errorHandler} from "./errors/ErrorHandler";
 import {InternalServerError} from "./errors/InternalServerError";
 
@@ -30,6 +33,7 @@ export class Server {
 
             // Initialize Routes
             Router.initializeRoutes(Server.app);
+            // Server.app.use(tokenGuard());
 
             // Initialize RabbitMQ Connection
             /*amqplib.connect('amqp://localhost').then(connection => {
@@ -82,6 +86,7 @@ export class Server {
     private static configureApp() {
         // all environments
         Server.app.set("port", process.env.PORT || 3000);
+        Server.app.use(cors());
         Server.app.use(bodyParser.urlencoded({ extended: true }));
         Server.app.use(bodyParser.json());
         Server.app.use(compression());

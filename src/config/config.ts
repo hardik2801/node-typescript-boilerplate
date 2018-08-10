@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config();
+import * as Sequelize from 'sequelize';
 
 export const development = {
     database: process.env.DB_NAME,
@@ -20,6 +21,14 @@ export const production = {
     dialect: "mysql",
     logging: false
 };
+
+export const sequelize = new Sequelize(this.development.database, this.development.username, this.development.password, {
+    dialect: this.development.dialect,
+    port: 3306,
+    host: process.env.DB_HOST
+});
+
+sequelize.authenticate();
 
 // export const facebook = {
 //     clientID: process.env.FACEBOOK_CLIENT_ID,
