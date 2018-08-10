@@ -5,7 +5,7 @@ import * as passport from "passport";
 import * as config from "./config/config";
 import * as http from "http";
 // import {Auth} from "./auth/auth";
-import {Router} from "./routes";
+import {Router} from "../routes/index";
 import {errorHandler} from "./errors/ErrorHandler";
 import {InternalServerError} from "./errors/InternalServerError";
 
