@@ -14,7 +14,7 @@ const auth_1 = require("../auth/auth");
 const UserDTO_1 = require("../models/dtos/UserDTO");
 const roles_1 = require("../auth/roles");
 const BaseRouter_1 = require("./BaseRouter");
-const oauth2_1 = require("../auth/oauth2");
+const ValidationError_1 = require("../errors/ValidationError");
 class UserRouter extends BaseRouter_1.BaseRouter {
     constructor() {
         super();
@@ -37,7 +37,6 @@ class UserRouter extends BaseRouter_1.BaseRouter {
                 }
             }
             catch (error) {
-                console.log(error, 'err in get');
                 next(error);
             }
         });
@@ -96,10 +95,27 @@ class UserRouter extends BaseRouter_1.BaseRouter {
             }
         });
     }
+    getAccessToken(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('get access token');
+            try {
+                const user = yield this.userManager.findByEmail(req.body.email);
+                const validate = yield auth_1.Auth.comparePasswords(req.body.password, user.password);
+                if (validate)
+                    res.send({ passwords_match: validate, userId: user.id, message: 'password match' });
+                else
+                    throw new ValidationError_1.ValidationError('Invalid Credentials', 401, 'Validation Error');
+            }
+            catch (error) {
+                console.log('catch');
+                next(error);
+            }
+        });
+    }
     buildRoutes() {
-        var oauth = new oauth2_1.Oauth2();
-        // this.router.get("/", this.get.bind(this));
-        this.router.get("/", oauth.registerPasswordGrant.bind(oauth));
+        // var oauth = new Oauth2();
+        // this.router.get("/", Auth.getBearerMiddleware(), Roles.connectRoles.can('modify user'), this.get.bind(this));
+        this.router.post("/login", this.getAccessToken.bind(this));
         this.router.post("/", this.post.bind(this));
         this.router.delete("/:id", auth_1.Auth.getBearerMiddleware(), roles_1.Roles.connectRoles.can('modify user'), this.delete.bind(this));
         this.router.put("/:id", auth_1.Auth.getBearerMiddleware(), roles_1.Roles.connectRoles.can('modify user'), this.put.bind(this));

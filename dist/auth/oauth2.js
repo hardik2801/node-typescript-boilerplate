@@ -68,8 +68,7 @@ class Oauth2 {
     // authorization request for verification. If these values are validated, the
     // application issues an access token on behalf of the user who authorized the code.
     registerPasswordGrant() {
-        console.log('passwd grant');
-        return this.server.exchange(oauth2orize.exchange.password((athlete, username, password, scope, done) => {
+        this.server.exchange(oauth2orize.exchange.password((athlete, username, password, scope, done) => {
             index_1.AccessToken.findOne({ where: { userId: athlete.id } }).then(accessToken => {
                 if (accessToken) {
                     if (this.jwtSecret) {
