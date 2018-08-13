@@ -14,10 +14,12 @@ const auth_1 = require("../auth/auth");
 const UserDTO_1 = require("../models/dtos/UserDTO");
 const roles_1 = require("../auth/roles");
 const BaseRouter_1 = require("./BaseRouter");
-const ValidationError_1 = require("../errors/ValidationError");
+const AuthError_1 = require("../errors/AuthError");
+const jsonwebtoken_1 = require("jsonwebtoken");
 class UserRouter extends BaseRouter_1.BaseRouter {
     constructor() {
         super();
+        this.jwtSecret = process.env.JWT_SECRET || 'Yapsody_auth';
         this.userManager = new UserManager_1.UserManager();
         this.buildRoutes();
     }
@@ -97,25 +99,37 @@ class UserRouter extends BaseRouter_1.BaseRouter {
     }
     getAccessToken(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('get access token');
             try {
                 const user = yield this.userManager.findByEmail(req.body.email);
                 const validate = yield auth_1.Auth.comparePasswords(req.body.password, user.password);
-                if (validate)
-                    res.send({ passwords_match: validate, userId: user.id, message: 'password match' });
-                else
-                    throw new ValidationError_1.ValidationError('Invalid Credentials', 401, 'Validation Error');
+                if (validate) {
+                    const token = jsonwebtoken_1.sign({ userId: user.id, userName: user.firstName + ' ' + user.lastName }, this.jwtSecret, { expiresIn: "10h" });
+                    res.send({ jwtToken: token, userId: user.id, message: 'password match' });
+                }
+                else {
+                    throw new AuthError_1.AuthError('Invalid Credentials');
+                }
             }
             catch (error) {
-                console.log('catch');
+                next(error);
+            }
+        });
+    }
+    verifyAccessToken(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                jsonwebtoken_1.verify(req.body.jwtToken, this.jwtSecret, (err, decodedToken) => {
+                    res.send(decodedToken);
+                });
+            }
+            catch (error) {
                 next(error);
             }
         });
     }
     buildRoutes() {
-        // var oauth = new Oauth2();
-        // this.router.get("/", Auth.getBearerMiddleware(), Roles.connectRoles.can('modify user'), this.get.bind(this));
         this.router.post("/login", this.getAccessToken.bind(this));
+        this.router.post("/verify", this.verifyAccessToken.bind(this));
         this.router.post("/", this.post.bind(this));
         this.router.delete("/:id", auth_1.Auth.getBearerMiddleware(), roles_1.Roles.connectRoles.can('modify user'), this.delete.bind(this));
         this.router.put("/:id", auth_1.Auth.getBearerMiddleware(), roles_1.Roles.connectRoles.can('modify user'), this.put.bind(this));

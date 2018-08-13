@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9b295a98-e4de-4b7e-b935-133ca91c5c13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/oauth2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/oauth2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/oauth2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/oauth2.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/errors/ErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/errors/ErrorHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/errors/ErrorHandler.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/errors/ErrorHandler.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/errors/ValidationError.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/errors/ValidationError.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/errors/ValidationError.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/errors/ValidationError.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/routes/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/UserRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/routes/UserRouter.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/UserRouter.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-infra.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/oauth2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/oauth2.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/errors/ErrorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/ErrorHandler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/errors/ValidationError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/ValidationError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/UserRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserRouter.ts" afterDir="false" />
@@ -45,7 +41,7 @@
           <entry key="gitignore" value="2" />
           <entry key="js" value="2" />
           <entry key="json" value="2" />
-          <entry key="ts" value="105" />
+          <entry key="ts" value="114" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -55,7 +51,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="TypeScript" value="105" />
+          <entry key="TypeScript" value="114" />
           <entry key="YAML" value="1" />
           <entry key="tsconfig" value="1" />
         </counts>
@@ -64,14 +60,14 @@
         <counts>
           <entry key="env" value="21" />
           <entry key="json" value="38" />
-          <entry key="ts" value="1168" />
+          <entry key="ts" value="1814" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="21" />
           <entry key="JSON" value="36" />
-          <entry key="TypeScript" value="1168" />
+          <entry key="TypeScript" value="1814" />
           <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
@@ -85,11 +81,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/UserRouter.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="89" column="90" lean-forward="true" selection-start-line="89" selection-start-column="90" selection-end-line="89" selection-end-column="90" />
+            <state relative-caret-position="284">
+              <caret line="100" column="83" selection-start-line="100" selection-start-column="83" selection-end-line="100" selection-end-column="83" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -97,41 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/errors/ValidationError.ts">
+        <entry file="file://$PROJECT_DIR$/src/errors/ErrorHandler.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/errors/BaseError.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/entities/User.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#109#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="436">
+              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -146,19 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/auth/auth.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+            <state relative-caret-position="280">
+              <caret line="164" column="44" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="44" />
               <folding>
                 <element signature="e#32#69#0" expanded="true" />
               </folding>
@@ -169,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/auth/oauth2.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-506">
-              <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+            <state relative-caret-position="211">
+              <caret line="83" column="95" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -181,12 +138,14 @@
     <findStrings>
       <find>passpor</find>
       <find>faceb</find>
-      <find>initializeRoutes</find>
       <find>InternalServerError</find>
       <find>bearer</find>
       <find>bearerstrategy</find>
       <find>BasicStrategy</find>
       <find>compare</find>
+      <find>initializeRoutes</find>
+      <find>sign(</find>
+      <find>verify</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,15 +167,16 @@
         <option value="$PROJECT_DIR$/src/models/dtos/UserDTO.ts" />
         <option value="$PROJECT_DIR$/src/managers/UserManager.ts" />
         <option value="$PROJECT_DIR$/src/config/config.ts" />
-        <option value="$PROJECT_DIR$/src/server.ts" />
         <option value="$PROJECT_DIR$/src/auth/auth.ts" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/routes/ClientRouter.ts" />
         <option value="$PROJECT_DIR$/src/auth/oauth2.ts" />
-        <option value="$PROJECT_DIR$/src/errors/ValidationError.ts" />
         <option value="$PROJECT_DIR$/src/errors/ErrorHandler.ts" />
-        <option value="$PROJECT_DIR$/src/routes/UserRouter.ts" />
+        <option value="$PROJECT_DIR$/src/errors/InternalServerError.ts" />
         <option value="$PROJECT_DIR$/src/errors/BaseError.ts" />
+        <option value="$PROJECT_DIR$/src/errors/ValidationError.ts" />
+        <option value="$PROJECT_DIR$/src/server.ts" />
+        <option value="$PROJECT_DIR$/src/routes/UserRouter.ts" />
       </list>
     </option>
   </component>
@@ -265,13 +225,13 @@
               <item name="node-typescript-rest" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-typescript-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="errors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-typescript-rest" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-typescript-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="errors" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,12 +283,12 @@
       <workItem from="1534051192330" duration="1789000" />
       <workItem from="1534074629501" duration="4589000" />
       <workItem from="1534083598923" duration="4063000" />
-      <workItem from="1534132356926" duration="14897000" />
+      <workItem from="1534132356926" duration="22161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31670000" />
+    <option name="totallyTimeSpent" value="38934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -459,9 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/errors/InternalServerError.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/AuthRouter.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -549,37 +506,10 @@
     <entry file="file://$PROJECT_DIR$/src/errors/NotFoundError.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/request/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="257" column="41" lean-forward="true" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1611">
-          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/oauth2.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-506">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -590,13 +520,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/auth.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-          <folding>
-            <element signature="e#32#69#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="199">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="904" column="19" lean-forward="true" selection-start-line="904" selection-start-column="19" selection-end-line="904" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/express-serve-static-core/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -610,8 +558,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/errors/AuthError.ts">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/routes/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/ClientRouter.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -620,55 +579,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/errors/ErrorHandler.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="36" column="98" selection-start-line="36" selection-start-column="98" selection-end-line="36" selection-end-column="98" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/errors/AuthError.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
+    <entry file="file://$PROJECT_DIR$/src/errors/InternalServerError.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="901" column="10" selection-start-line="901" selection-start-column="10" selection-end-line="901" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/errors/BaseError.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="69">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/errors/ValidationError.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        <state relative-caret-position="69">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/UserRouter.ts">
+    <entry file="file://$PROJECT_DIR$/src/errors/BaseError.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="89" column="90" lean-forward="true" selection-start-line="89" selection-start-column="90" selection-end-line="89" selection-end-column="90" />
+        <state relative-caret-position="138">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/errors/ErrorHandler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/auth/auth.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="280">
+          <caret line="164" column="44" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="44" />
+          <folding>
+            <element signature="e#32#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/oauth2.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="83" column="95" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/UserRouter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="100" column="83" selection-start-line="100" selection-start-column="83" selection-end-line="100" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
