@@ -4,12 +4,12 @@ import * as bodyParser from "body-parser";
 import * as passport from "passport";
 import * as config from "./config/config";
 import * as http from "http";
-import * as cors from 'cors';
-import { userRouter } from './routes/UserRouter';
-import { tokenGuard } from './middlewares/token.guard';
-// import {Auth} from "./auth/auth";
-import {Router} from "./routes/index";
+import {Auth} from "./auth/auth";
+import {Models} from "./models";
+import {Router} from "./routes";
 import {errorHandler} from "./errors/ErrorHandler";
+import {Roles} from "./auth/roles";
+// import {MessageManager} from "./managers/MessageManager";
 import {InternalServerError} from "./errors/InternalServerError";
 
 export class Server {
@@ -29,11 +29,13 @@ export class Server {
             Server.configureApp();
 
             // Initialize OAuth
-          //  Server.initializeAuth();
+           Server.initializeAuth();
+
+            // Initialize role based security
+            Server.initializeRoles();
 
             // Initialize Routes
             Router.initializeRoutes(Server.app);
-            // Server.app.use(tokenGuard());
 
             // Initialize RabbitMQ Connection
             /*amqplib.connect('amqp://localhost').then(connection => {
@@ -46,14 +48,14 @@ export class Server {
             Server.app.use(errorHandler);
 
             process.on('unhandledRejection', (reason, p) => {
-                console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+                // logger.error('Unhandled Rejection at: Promise', p, 'reason:', reason);
             });
 
             // Initialize Database then bootstrap application
             try {
                 await Server.initializeDatabase();
             } catch(error) {
-                console.log("Failed to initialize database", error);
+                // logger.error("Failed to initialize database", error);
             }
 
             return Server.app.listen(Server.app.get("port"));
@@ -68,8 +70,8 @@ export class Server {
         const nodeEnv = process.env.NODE_ENV;
         if(nodeEnv) {
             const sequelizeConfig = config[nodeEnv];
-            // const models = new Models(sequelizeConfig);
-            // return models.initModels();
+            const models = new Models(sequelizeConfig);
+            return models.initModels();
         } else {
             throw new InternalServerError("No NODE ENV set");
         }
@@ -77,16 +79,22 @@ export class Server {
 
     private static initializeAuth() {
         Server.app.use(passport.initialize());
-        // Auth.serializeUser();
-        // Auth.useBasicStrategy();
-        // Auth.useBearerStrategy();
-        // Auth.useLocalStrategy();
+        Auth.serializeUser();
+        Auth.useBasicStrategy();
+        Auth.useBearerStrategy();
+        Auth.useLocalStrategy();
         // Auth.useFacebookTokenStrategy();
     }
+
+    private static initializeRoles() {
+        Roles.buildRoles();
+        Server.app.use(Roles.middleware());
+    }
+
     private static configureApp() {
+
         // all environments
         Server.app.set("port", process.env.PORT || 3000);
-        Server.app.use(cors());
         Server.app.use(bodyParser.urlencoded({ extended: true }));
         Server.app.use(bodyParser.json());
         Server.app.use(compression());

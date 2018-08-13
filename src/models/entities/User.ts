@@ -1,30 +1,34 @@
-import * as Sequelize from 'sequelize';
-import { sequelize } from '../../config/config';
+import {AllowNull, BeforeSave, Column, DataType, HasOne, IsEmail, Table, Unique} from 'sequelize-typescript';
+import {AccessToken} from "./AccessToken";
+import {BaseModel} from "./BaseModel";
+import {Utils} from "../../utils";
 
-export interface UserAddModel {
+@Table
+export class User extends BaseModel<User> {
+
+    @AllowNull(false)
+    @Column
+    firstName: string;
+
+    @AllowNull(false)
+    @Column
+    lastName: string;
+
+    @AllowNull(false)
+    @IsEmail
+    @Unique
+    @Column
     email: string;
+
+    @AllowNull(false)
+    @Column
     password: string;
-}
 
-export interface UserModel extends Sequelize.Model<UserModel, UserAddModel> {
-    id: number;
-    email: string;
-    password: string;
-    createdAt: string;
-    updatedAt: string;
-}
+    @HasOne(() => AccessToken)
+    accessToken: AccessToken;
 
-export interface UserViewModel {
-    id: number;
-    email: string;
+    @BeforeSave
+    static encryptPassword(instance: User) {
+        instance.password = Utils.encryptPassword(instance.password);
+    }
 }
-
-export const User = sequelize.define<UserModel, UserAddModel>('user', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    email: Sequelize.STRING,
-    password: Sequelize.STRING
-});

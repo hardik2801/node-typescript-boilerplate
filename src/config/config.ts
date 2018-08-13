@@ -5,11 +5,17 @@ export const development = {
     database: process.env.DB_NAME,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    // Defaults for Postgres
+    // Defaults for Mysql
     "host": "127.0.0.1",
-    "port": 5432,
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
+};
+
+export const test = {
+    dialect: "sqlite",
+    storage: 'tests/sqlite.db',
+    logging: false
 };
 
 export const production = {
@@ -17,7 +23,7 @@ export const production = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     host: "127.0.0.1",
-    port: 5432,
+    port: 3306,
     dialect: "mysql",
     logging: false
 };
@@ -28,7 +34,9 @@ export const sequelize = new Sequelize(this.development.database, this.developme
     host: process.env.DB_HOST
 });
 
-sequelize.authenticate();
+sequelize.authenticate().then(() => {
+    console.log('db connected');
+});
 
 // export const facebook = {
 //     clientID: process.env.FACEBOOK_CLIENT_ID,

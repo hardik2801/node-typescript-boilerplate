@@ -1,0 +1,1 @@
+{"version":3,"file":"MessageError.js","sourceRoot":"","sources":["../../src/errors/MessageError.ts"],"names":[],"mappings":";;AAAA,2CAAsC;AAEtC,MAAa,YAAa,SAAQ,qBAAS;IACvC,YAAY,WAAmB;QAC3B,KAAK,CAAC,WAAW,EAAE,GAAG,EAAE,YAAY,CAAC,IAAI,CAAC,CAAC;IAC/C,CAAC;CACJ;AAJD,oCAIC"}
