@@ -32,7 +32,8 @@
     "passport-oauth2-client-password": "^0.1.2",
     "reflect-metadata": "^0.1.10",
     "sequelize": "^4.22.15",
-    "sequelize-typescript": "^0.5.0"
+    "sequelize-typescript": "^0.5.0",
+    "yap-auth-client": "git://github.com/hardik2801/verify-jwt.git#master"
   },
   "devDependencies": {
     "@types/async": "^2.0.40",

@@ -7,6 +7,7 @@ import {Roles} from "../auth/roles";
 import {BaseRouter} from "./BaseRouter";
 import {AuthError} from "../errors/AuthError";
 import {sign, verify} from "jsonwebtoken";
+import {YapsodyAuth} from "yap-auth-client";
 
 export class UserRouter extends BaseRouter {
 
@@ -97,15 +98,10 @@ export class UserRouter extends BaseRouter {
     }
 
     public async verifyAccessToken(req: express.Request, res: express.Response, next: express.NextFunction) {
-        try {
-            verify(req.body.jwtToken, this.jwtSecret, (err, decodedToken: any) => {
-                res.send(decodedToken);
-            });
-
-        }
-        catch (error) {
-            next(error);
-        }
+        const yapAuth = new YapsodyAuth();
+        const data = await yapAuth.verifyAccessToken(req.body.jwtToken);
+        console.log(data, 'token data');
+        res.send(data);
     }
 
 

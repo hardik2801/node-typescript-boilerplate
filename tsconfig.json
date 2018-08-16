@@ -11,9 +11,7 @@
     "strictNullChecks": true
   },
   "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "src/**/*.ts",
+    "node_modules/yap_auth_client/*.ts"
   ]
 }

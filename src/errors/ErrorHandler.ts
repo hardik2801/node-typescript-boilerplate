@@ -34,7 +34,7 @@ export function errorHandler(error, req, res, next) {
     }
     if (error instanceof SequelizeValidationError) {
         // logger.error(error.message);
-        return res.status(400).json(new ValidationError(error.message, 109, 'Internal Server Error'));
+        return res.status(400).json(new ValidationError(error.message));
     }
     // logger.error(error.message);
     return res.status(500).json(new InternalServerError(error.message));

@@ -16,6 +16,7 @@ const roles_1 = require("../auth/roles");
 const BaseRouter_1 = require("./BaseRouter");
 const AuthError_1 = require("../errors/AuthError");
 const jsonwebtoken_1 = require("jsonwebtoken");
+const yap_auth_client_1 = require("yap-auth-client");
 class UserRouter extends BaseRouter_1.BaseRouter {
     constructor() {
         super();
@@ -117,14 +118,10 @@ class UserRouter extends BaseRouter_1.BaseRouter {
     }
     verifyAccessToken(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                jsonwebtoken_1.verify(req.body.jwtToken, this.jwtSecret, (err, decodedToken) => {
-                    res.send(decodedToken);
-                });
-            }
-            catch (error) {
-                next(error);
-            }
+            const yapAuth = new yap_auth_client_1.YapsodyAuth();
+            const data = yield yapAuth.verifyAccessToken(req.body.jwtToken);
+            console.log(data, 'token data');
+            res.send(data);
         });
     }
     buildRoutes() {
