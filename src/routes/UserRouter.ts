@@ -7,7 +7,7 @@ import {Roles} from "../auth/roles";
 import {BaseRouter} from "./BaseRouter";
 import {AuthError} from "../errors/AuthError";
 import {sign, verify} from "jsonwebtoken";
-import {YapsodyAuth} from "yap-auth-client";
+import * as YapsodyAuth from "yap-auth-client/index.js";
 
 export class UserRouter extends BaseRouter {
 
@@ -82,32 +82,39 @@ export class UserRouter extends BaseRouter {
     }
 
     public async getAccessToken(req: express.Request, res: express.Response, next: express.NextFunction) {
-        try {
-            const user = await this.userManager.findByEmail(req.body.email);
-            const validate = await Auth.comparePasswords(req.body.password, user.password);
-            if(validate) {
-                const token = sign({userId: user.id,  userName: user.firstName + ' ' + user.lastName},  this.jwtSecret, { expiresIn: "10h"});
-                res.send({jwtToken: token, userId: user.id, message: 'password match'});
-            }
-            else {
-                throw new AuthError('Invalid Credentials');
-            }
-        } catch (error) {
-            next(error);
+        try{
+            const newUser = await YapsodyAuth.verifyUser(req);
+            res.send(newUser);
+        } catch(error) {
+            res.status(error.code).send(error.message);
         }
     }
 
     public async verifyAccessToken(req: express.Request, res: express.Response, next: express.NextFunction) {
-        const yapAuth = new YapsodyAuth();
-        const data = await yapAuth.verifyAccessToken(req.body.jwtToken);
-        console.log(data, 'token data');
-        res.send(data);
+        console.log('coming here!');
+        try {
+            const data = await YapsodyAuth.verifyUser(req);
+            res.send(data);
+        } catch (error) {
+            res.status(error.code).send(error.message);
+            console.log(error, 'err user route');
+        }
+    }
+
+    public async registerUser(req: express.Request, res: express.Response, next: express.NextFunction) {
+        try{
+            const newUser = await YapsodyAuth.registerUser(req);
+            res.send(newUser);
+        } catch(error) {
+            res.status(error.code).send(error.message);
+        }
     }
 
 
     private buildRoutes() {
         this.router.post("/login", this.getAccessToken.bind(this));
         this.router.post("/verify", this.verifyAccessToken.bind(this));
+        this.router.post("/registeruser", this.registerUser.bind(this));
         this.router.post("/", this.post.bind(this));
         this.router.delete("/:id", Auth.getBearerMiddleware(), Roles.connectRoles.can('modify user'), this.delete.bind(this));
         this.router.put("/:id", Auth.getBearerMiddleware(), Roles.connectRoles.can('modify user'), this.put.bind(this));
